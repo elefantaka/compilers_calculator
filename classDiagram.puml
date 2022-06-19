@@ -1,0 +1,19 @@
+@startuml
+set namespaceSeparator ::
+class "calculator::calculator.dart::Calculator" {
+  +Parser parser
+  +RegExp tokensAndOperators
+  +String calculateResult()
+  +String extractBrackets()
+  +String evaluate()
+}
+"calculator::calculator.dart::Calculator" o-- "calculator::parser.dart::Parser"
+class "calculator::parser.dart::Parser" {
+  +RegExp statementValidator
+  +RegExp bracketMultiplication
+  +RegExp bracketOpen
+  +RegExp bracketClosed
+  +String parse()
+  +String fillMultiplication()
+}
+@enduml
